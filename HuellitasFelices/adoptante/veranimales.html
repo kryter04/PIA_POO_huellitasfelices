@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Mascotas - Adoptante - Huellitas Felizes</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="veranimales.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-paw logo-icon"></i>
+                <h2>Huellitas Felizes</h2>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link" data-page="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="#" class="nav-link active" data-page="veranimales">
+                    <i class="fas fa-paw"></i>
+                    <span>Ver Mascotas</span>
+                </a>
+                <a href="solicitaradopcion.html" class="nav-link" data-page="solicitaradopcion">
+                    <i class="fas fa-heart"></i>
+                    <span>Solicitar Adopción</span>
+                </a>
+                <a href="perfil.html" class="nav-link" data-page="perfil">
+                    <i class="fas fa-user"></i>
+                    <span>Mi Perfil</span>
+                </a>
+                <a href="#" class="nav-link logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Ver Mascotas Disponibles</h1>
+                </div>
+                <div class="header-right">
+                    <img src="../imagenes/imglogo.jpg" alt="Logo" class="logo-img" onerror="this.onerror=null; this.src='image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 fill=%22%234CAF50%22/><text x=%2212%22 y=%2216%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22white%22 text-anchor=%22middle%22>HF</text></svg>';">
+                    <div class="user-info">
+                        <span id="userName">Max</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Search and Filters -->
+            <section class="search-section">
+                <div class="search-filters">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Buscar mascota por nombre...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-controls">
+                        <select id="tipoFilter">
+                            <option value="">Todos los tipos</option>
+                            <option value="perro">Perro</option>
+                            <option value="gato">Gato</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <select id="edadFilter">
+                            <option value="">Todas las edades</option>
+                            <option value="cachorro">Cachorro</option>
+                            <option value="joven">Joven</option>
+                            <option value="adulto">Adulto</option>
+                            <option value="senior">Senior</option>
+                        </select>
+                        <select id="tamanoFilter">
+                            <option value="">Todos los tamaños</option>
+                            <option value="pequeno">Pequeño</option>
+                            <option value="mediano">Mediano</option>
+                            <option value="grande">Grande</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Animals Grid -->
+            <section class="animals-section">
+                <div class="section-header">
+                    <h2 id="animalsCount">Mascotas Disponibles</h2>
+                </div>
+                
+                <div class="animals-grid" id="animalsGrid">
+                    <!-- Los animales se cargarán dinámicamente -->
+                    <div class="loading-placeholder">
+                        <p>Cargando mascotas disponibles...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="base.js"></script>
+    <script src="veranimales.js"></script>
+</body>
+</html>

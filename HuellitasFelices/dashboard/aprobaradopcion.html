@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprobar Adopción - Dashboard - Huellitas Felizes</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="aprobaradopcion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-paw logo-icon"></i>
+                <h2>Huellitas Felizes</h2>
+            </div>
+            
+            <nav class="nav-menu" id="navMenu">
+                <!-- El menú se generará dinámicamente con JavaScript -->
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Aprobar Adopciones</h1>
+                </div>
+                <div class="header-right">
+                    <img src="../imagenes/imglogo.jpg" alt="Logo" class="logo-img" onerror="this.onerror=null; this.src='image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 fill=%22%234CAF50%22/><text x=%2212%22 y=%2216%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22white%22 text-anchor=%22middle%22>HF</text></svg>';">
+                    <div class="user-info">
+                        <span id="userName">Cargando...</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Search and Filters -->
+            <section class="search-section">
+                <div class="search-filters">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Buscar por mascota o adoptante...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filter-controls">
+                        <select id="estadoFilter">
+                            <option value="">Todos los estados</option>
+                            <option value="pendiente">Pendiente</option>
+                            <option value="aprobada">Aprobada</option>
+                            <option value="rechazada">Rechazada</option>
+                        </select>
+                        <select id="tipoAnimalFilter">
+                            <option value="">Todos los tipos</option>
+                            <option value="perro">Perro</option>
+                            <option value="gato">Gato</option>
+                            <option value="conejo">Conejo</option>
+                            <option value="ave">Ave</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Adopciones Grid -->
+            <section class="animals-section">
+                <div class="section-header">
+                    <h2 id="adopcionesCount">Solicitudes de Adopción</h2>
+                </div>
+                
+                <div class="animals-grid" id="adopcionesGrid">
+                    <!-- Las adopciones se cargarán dinámicamente -->
+                    <div class="loading-placeholder">
+                        <p>Cargando solicitudes de adopción...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Approve Adoption Modal -->
+    <div id="approveModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Aprobar Adopción</h3>
+                <span class="close" id="closeApproveModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="adopcionDetails">
+                    <!-- Detalles de la adopción se cargarán aquí -->
+                </div>
+                <div class="input-group">
+                    <label for="comentarios">Comentarios (Opcional)</label>
+                    <textarea id="comentarios" name="comentarios" rows="3" placeholder="Comentarios sobre la decisión..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancelar" id="cancelApproveBtn">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
+                    <button type="button" class="btn-approve" id="confirmApproveBtn">
+                        <i class="fas fa-check"></i> Aprobar Adopción
+                    </button>
+                    <button type="button" class="btn-reject" id="confirmRejectBtn">
+                        <i class="fas fa-times"></i> Rechazar Adopción
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script src="aprobaradopcion.js"></script>
+</body>
+</html>
