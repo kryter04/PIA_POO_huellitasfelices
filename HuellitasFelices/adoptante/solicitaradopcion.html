@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Adopción - Adoptante - Huellitas Felizes</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="solicitaradopcion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-paw logo-icon"></i>
+                <h2>Huellitas Felizes</h2>
+            </div>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-page="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="veranimales.html" class="nav-link" data-page="veranimales">
+                    <i class="fas fa-paw"></i>
+                    <span>Ver Mascotas</span>
+                </a>
+                <a href="solicitaradopcion.html" class="nav-link active" data-page="solicitaradopcion">
+                    <i class="fas fa-heart"></i>
+                    <span>Solicitar Adopción</span>
+                </a>
+                <a href="perfil.html" class="nav-link" data-page="perfil">
+                    <i class="fas fa-user"></i>
+                    <span>Mi Perfil</span>
+                </a>
+                <a href="#" class="nav-link logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h1>Solicitar Adopción</h1>
+                </div>
+                <div class="header-right">
+                    <img src="../imagenes/imglogo.jpg" alt="Logo" class="logo-img" onerror="this.onerror=null; this.src='image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 fill=%22%234CAF50%22/><text x=%2212%22 y=%2216%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22white%22 text-anchor=%22middle%22>HF</text></svg>';">
+                    <div class="user-info">
+                        <span id="userName">Cargando...</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="animals-section"> <div class="form-container">
+                    <h2>Formulario de Solicitud de Adopción</h2>
+                    <p>Completa el siguiente formulario para iniciar tu proceso de adopción.</p>
+                    
+                    <form id="solicitudForm" class="solicitud-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="nombreMascota">Nombre de la Mascota</label>
+                                <select id="nombreMascota" name="nombreMascota" required>
+                                    <option value="">Selecciona una mascota</option>
+                                    </select>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="fechaSolicitud">Fecha de Solicitud</label>
+                                <input type="date" id="fechaSolicitud" name="fechaSolicitud" required readonly>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="tipoVivienda">Tipo de Vivienda</label>
+                                <select id="tipoVivienda" name="tipoVivienda" required>
+                                    <option value="">Selecciona tipo de vivienda</option>
+                                    <option value="casa">Casa</option>
+                                    <option value="departamento">Departamento</option>
+                                    <option value="casaConPatio">Casa con patio</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="espacioHogar">Espacio del Hogar (m²)</label>
+                                <input type="number" id="espacioHogar" name="espacioHogar" placeholder="Ej: 80" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="tiempoCuidado">¿Cuánto tiempo puedes dedicarle al animal?</label>
+                                <select id="tiempoCuidado" name="tiempoCuidado" required>
+                                    <option value="">Selecciona tiempo de cuidado</option>
+                                    <option value="menos4">Menos de 4 horas diarias</option>
+                                    <option value="4a6">4 a 6 horas diarias</option>
+                                    <option value="mas6">Más de 6 horas diarias</option>
+                                </select>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="experiencia">¿Tienes experiencia con animales?</label>
+                                <select id="experiencia" name="experiencia" required>
+                                    <option value="">Selecciona experiencia</option>
+                                    <option value="si">Sí</option>
+                                    <option value="no">No</option>
+                                    <option value="poco">Poco</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="motivo">Motivo de Adopción</label>
+                            <textarea id="motivo" name="motivo" rows="4" placeholder="Describe por qué deseas adoptar esta mascota..." required></textarea>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="disponibilidad">¿Estás disponible para revisiones médicas?</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="disponibilidad" name="disponibilidad" required>
+                                    <span class="checkmark"></span>
+                                    Acepto estar disponible para revisiones médicas y seguimiento
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancelar" onclick="window.location.href='index.html'">
+                                <i class="fas fa-times"></i> Cancelar
+                            </button>
+                            <button type="submit" class="btn-solicitar">
+                                <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="base.js"></script>
+    <script src="solicitaradopcion.js"></script>
+    
+    </body>
+</html>

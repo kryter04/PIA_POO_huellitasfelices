@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellitas Felices - Registro de Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="registro.css"> <!-- (Enlace al CSS externo para el registro) -->
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow">
+                    <div class="card-header bg-success text-white text-center">
+                        <h3>Registro de Usuario</h3> <!-- (Título de la página de registro) -->
+                    </div>
+                    <div class="card-body">
+                        <!-- (Formulario de registro de usuario) -->
+                        <form id="registroForm">
+                            <div class="mb-3">
+                                <label for="txt_nombre_registro" class="form-label">Nombre:</label> <!-- (Etiqueta para el campo de nombre) -->
+                                <input type="text" class="form-control" id="txt_nombre_registro" name="txt_nombre_registro" required> <!-- (Cuadro de texto para el nombre) -->
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_correo_registro" class="form-label">Correo Electrónico:</label> <!-- (Etiqueta para el campo de correo) -->
+                                <input type="email" class="form-control" id="txt_correo_registro" name="txt_correo_registro" required> <!-- (Cuadro de texto para el correo) -->
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_contrasena_registro" class="form-label">Contraseña:</label> <!-- (Etiqueta para el campo de contraseña) -->
+                                <input type="password" class="form-control" id="txt_contrasena_registro" name="txt_contrasena_registro" required> <!-- (Cuadro de texto para la contraseña) -->
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_telefono_registro" class="form-label">Teléfono (Opcional):</label> <!-- (Etiqueta para el campo de teléfono) -->
+                                <input type="tel" class="form-control" id="txt_telefono_registro" name="txt_telefono_registro"> <!-- (Cuadro de texto para el teléfono) -->
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success" id="btn_registrar_usuario">Registrarse</button> <!-- (Botón para registrarse) -->
+                            </div>
+                        </form>
+                        <div class="mt-3 text-center">
+                            <a href="login.html" id="btn_volver_login">¿Ya tienes cuenta? Inicia sesión aquí</a> <!-- (Enlace para volver al login) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="registro.js"></script> <!-- (Enlace al JS externo para el registro) -->
+</body>
+</html>

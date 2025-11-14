@@ -1,0 +1,180 @@
+/* Importar fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Estilo general para la pagina de login */
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    /* Colores de la naturaleza para el fondo */
+    background: linear-gradient(135deg, #8BC34A, #4CAF50, #2E7D32);
+    /* Imagen de fondo local (asegurate de que el nombre y la ruta sean correctos) */
+    background-image: url('../imagenes/imgfondo.png'); /* Ajusta la extensión (.png, .jpg, etc.) */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay; /* Mezcla el color con la imagen */
+    /* Permitimos el desplazamiento vertical */
+    /* REMOVIDO: overflow-y: hidden; */
+    padding-top: 20px; /* Espacio superior opcional */
+    padding-bottom: 20px; /* Espacio inferior opcional */
+    margin: 0; /* Asegura que no haya margen en el body */
+    min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
+    position: relative; /* Necesario para posicionar elementos hijos absolutamente */
+}
+
+
+/* Estilo para la tarjeta de login */
+.login-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco muy transparente */
+    backdrop-filter: blur(12px); /* Efecto de vidrio esmerilado */
+    border-radius: 15px !important; /* Bordes mas redondeados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra mas pronunciada */
+    overflow: hidden; /* Evita que la imagen de fondo sobresalga */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transicion suave */
+    /* max-width: 100%; */ /* REMOVIDO: Ya no es necesario si usamos position */
+    /* margin: 0 auto; */ /* REMOVIDO: El margen central ya no aplica con position */
+    margin-top: 20px; /* Espacio superior opcional */
+    margin-bottom: 20px; /* Espacio inferior opcional */
+    /* NUEVO: Posicionamiento relativo para mover la tarjeta */
+    position: relative; /* O 'absolute' si se quiere desacoplar completamente del flujo */
+    /* Mover la tarjeta hacia la derecha */
+    left: 100%; /* Ajusta este valor para mover la tarjeta a la derecha */
+    /* Por ejemplo: left: 10%; left: 20%; left: 30%; left: 40%; etc. */
+    /* Puedes usar valores fijos como 'left: 200px;' si lo prefieres */
+    /* transform: translateX(25%); */ /* Alternativa: Usar transform para mover */
+    /* Si usas transform, puede afectar el posicionamiento de elementos internos */
+}
+
+.login-card:hover {
+    transform: translateY(-5px); /* Levanta ligeramente al pasar el mouse */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25); /* Sombra mas intensa al pasar el mouse */
+}
+
+/* Estilo para el encabezado de la tarjeta */
+.card-header {
+    /* La imagen de fondo se aplica aqui */
+    height: 150px; /* Altura fija para el header */
+    /* Removemos la imagen de fondo del header para que use la del body */
+    background: inherit; /* Hereda la imagen de fondo del body */
+    background-size: cover;
+    background-position: center;
+    border: none;
+    margin-bottom: 0; /* Elimina espacio debajo del header */
+    position: relative; /* Para posicionar el overlay */
+    display: flex; /* Usamos flexbox para centrar el contenido */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+/* Capa de degradado sobre la imagen del header */
+.header-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Degradado verde opcional sobre la imagen del header, puedes ajustarlo o quitarlo */
+    /* background: linear-gradient(to bottom, rgba(56, 142, 60, 0.8), rgba(76, 175, 80, 0.6)); */
+    background: rgba(0, 0, 0, 0.3); /* Alternativa: capa oscura para que el texto se vea mejor */
+    z-index: 1; /* Detrás del contenido del header */
+}
+
+/* Contenido del header (texto) */
+.header-content {
+    z-index: 2; /* Delante del overlay */
+    text-align: center; /* Centra el texto dentro del header */
+    color: white; /* Asegura que el texto sea blanco */
+}
+
+/* Clase para centrar texto dentro de inputs (si es deseado) */
+.text-center-input {
+    text-align: center;
+}
+
+/* Estilo para los inputs */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    border-color: #4CAF50; /* Verde para el focus */
+    box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25); /* Sombra verde al focus */
+    outline: 0;
+}
+
+/* Estilo para los botones */
+.btn-primary {
+    background: linear-gradient(to right, #4CAF50, #388E3C); /* Degradado de verde */
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #388E3C, #4CAF50); /* Degradado invertido al hover */
+    transform: scale(1.02); /* Agrandamiento sutil al pasar el mouse */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-primary {
+    border-color: #4CAF50;
+    color: #4CAF50;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Estilo para los iconos dentro de los inputs */
+.input-group-text {
+    background-color: #f8f9fa;
+    border-color: #e0e0e0;
+    border-radius: 8px 0 0 8px; /* Bordes redondeados solo en los extremos izquierdos */
+    color: #7f8c8d;
+}
+
+/* Estilo para la frase inspiradora - Colocada en la esquina superior izquierda */
+.text-muted em {
+    color: #000000 !important; /* Color negro para la frase */
+    font-style: italic;
+    font-weight: bold; /* Asegura que esté en negrita */
+    font-size: 0.9rem; /* Un poco más grande */
+    opacity: 0.9; /* Ligeramente transparente para suavizar */
+    text-align: left; /* Alinea el texto a la izquierda */
+    display: block; /* Hace que el elemento se comporte como bloque */
+    padding: 10px 20px; /* Relleno para separarlo de los bordes */
+    /* Opcional: Agregar una sombra ligera para que se destaque un poco si el fondo es muy oscuro en ese punto */
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    /* Posicionamiento absoluto en la esquina superior izquierda */
+    position: absolute; /* Posicionamiento absoluto respecto al body */
+    top: 10px; /* Distancia desde la parte superior */
+    left: 10px; /* Distancia desde la parte izquierda */
+    /* Asegura que esté por encima de otros elementos */
+    z-index: 1000; /* Un z-index alto para que esté encima */
+    /* Fondo opcional para que se vea mejor sobre imágenes de fondo complejas */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+    border-radius: 5px; /* Bordes ligeramente redondeados para el fondo */
+    max-width: 40%; /* Limita el ancho máximo para que no tape toda la pantalla */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+}
+
+/* Centrado de textos */
+.text-center {
+    text-align: center !important;
+}
+
+/* Tamaño de fuente pequeño */
+.font-size-small {
+    font-size: 0.875rem; /* Tamaño de fuente pequeño */
+}
+
+/* Clase para frase inspiradora (opcional) */
+.frase-inspiradora {
+    /* margin-top: 20px !important; */ /* Comentamos el margen anterior si se aplica en la etiqueta em */
+}
